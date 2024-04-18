@@ -1,0 +1,42 @@
+﻿@model List<Gestione_Impiegati_ASPWEB.Models.Impiegato>
+
+
+<h1>Lista Impiegati</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>DataNascita</th>
+            <th>Ruolo</th>
+            <th>Reparto</th>
+            <th>Indirizzo</th>
+            <th>Citta</th>
+            <th>Provincia</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Impiegato imp in Model)
+        {
+            <tr>
+                <td>@imp.Nome</td>
+                <td>@imp.Cognome</td>
+                <td>@imp.DataNascita</td>
+                <td>
+                    <a href="/Impiegato/Dettaglio/@imp.Matricola">@imp.Matricola</a>
+                </td>
+                <td>@imp.Ruolo</td>
+                <td>@imp.RepartoRif</td>
+                <td>@imp.Indirizzo</td>
+                <td>@imp.Citta</td>
+                <td>@imp.Provincia</td>
+                <td>
+                    <button class="btn btn-danger" type="button" onclick="elimina('@imp.Matricola')">Elimina</button>
+                    <a class="btn btn-warning" href="/Prodotto/Modifica/@imp.Matricola">Modifica</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Gestione_Impiegati_ASPWEB.props" />
+</Project>
